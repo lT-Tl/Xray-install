@@ -774,9 +774,11 @@ show_help() {
 }
 
 main() {
-  check_if_running_as_root
+#  check_if_running_as_root
   identify_the_operating_system_and_architecture
   judgment_parameters "$@"
+  echo "$@"
+  exit 0
 
   install_software "$package_provide_tput" 'tput'
   red=$(tput setaf 1)
